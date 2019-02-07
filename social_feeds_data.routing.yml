@@ -1,0 +1,15 @@
+social_feeds_data.feed_api:
+  path: 'social-feeds-data'
+  defaults: { _controller: '\Drupal\social_feeds_data\Controller\SocialFeedsDataAPI::get' }
+  methods:  [POST,GET]
+  requirements:
+    _access: 'TRUE'
+social_feeds_data.custom_configs.social_feeds_data_settings:
+  path: /admin/config/services/social-feeds-data
+  defaults:
+    _form: '\Drupal\social_feeds_data\Form\SocialFeedsDataSettingsForm'
+    _title: 'Social Feeds Settings'
+  requirements:
+    _permission: 'administer modules'
+  options:
+    _admin_route: TRUE
